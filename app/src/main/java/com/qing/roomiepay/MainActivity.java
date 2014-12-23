@@ -1,10 +1,12 @@
 package com.qing.roomiepay;
 
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity
+                            implements AddRoomieDialogFragment.AddRoomieDialogListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,5 +20,13 @@ public class MainActivity extends FragmentActivity {
     public void addRoomieCB(View view){
         AddRoomieDialogFragment newFragment = new AddRoomieDialogFragment();
         newFragment.show(getSupportFragmentManager(), "add_roomie");
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
     }
 }
