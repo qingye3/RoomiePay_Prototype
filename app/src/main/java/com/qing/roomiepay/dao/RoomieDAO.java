@@ -4,8 +4,6 @@ package com.qing.roomiepay.dao;
 import com.qing.roomiepay.bean.RoomieBean;
 
 import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by Qing on 12/23/2014.
  */
@@ -18,14 +16,14 @@ public class RoomieDAO {
 
     public void addRoomie(String name){
         RoomieBean e = new RoomieBean(name);
-        datastore.addRoomie(e);
+        datastore.roomies.add(e);
     }
 
     public ArrayList<RoomieBean> getAllRoomies(){
-        return datastore.getRoomies();
+        return datastore.roomies;
     }
 
-    public int getCount(){
-        return datastore.getCount();
+    public void removeRoomie(int index){
+        datastore.roomies.remove(index);
     }
 }

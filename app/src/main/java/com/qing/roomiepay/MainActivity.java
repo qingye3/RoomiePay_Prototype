@@ -25,7 +25,7 @@ public class MainActivity extends FragmentActivity
         setContentView(R.layout.activity_main);
         roomieDAO = new RoomieDAO();
         list = (ListView) findViewById(R.id.roomieListView);
-        adapter = new RoomieAdapter(this, R.layout.roomie_row, new ArrayList<RoomieBean>());
+        adapter = new RoomieAdapter(this, new ArrayList<RoomieBean>());
         list.setAdapter(adapter);
     }
 
@@ -47,6 +47,4 @@ public class MainActivity extends FragmentActivity
     public void onDialogNegativeClick(DialogFragment dialog) {
 
     }
-
-
 }

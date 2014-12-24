@@ -3,7 +3,6 @@ package com.qing.roomiepay.dao;
 import com.qing.roomiepay.bean.RoomieBean;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Qing on 12/23/2014.
@@ -11,10 +10,10 @@ import java.util.List;
  */
 public class Datastore {
     private static Datastore instance = null;
-    private ArrayList<RoomieBean> roomies;
+    public ArrayList<RoomieBean> roomies;
 
     private Datastore(){
-        roomies = new ArrayList<RoomieBean>();
+        roomies = new ArrayList<>();
     }
 
     public static Datastore getInstance(){
@@ -22,21 +21,5 @@ public class Datastore {
             instance = new Datastore();
         }
         return instance;
-    }
-
-    public ArrayList<RoomieBean> getRoomies() {
-        return roomies;
-    }
-
-    public void setRoomies(ArrayList<RoomieBean> roomies) {
-        this.roomies = roomies;
-    }
-
-    public void addRoomie(RoomieBean roomie) {
-        roomies.add(roomie);
-    }
-
-    public int getCount(){
-        return roomies.size();
     }
 }
