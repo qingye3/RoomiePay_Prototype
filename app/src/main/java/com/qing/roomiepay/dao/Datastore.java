@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Datastore {
     private static Datastore instance = null;
-    private List<RoomieBean> roomies;
+    private ArrayList<RoomieBean> roomies;
 
     private Datastore(){
         roomies = new ArrayList<RoomieBean>();
@@ -24,15 +24,19 @@ public class Datastore {
         return instance;
     }
 
-    public List<RoomieBean> getRoomies() {
+    public ArrayList<RoomieBean> getRoomies() {
         return roomies;
     }
 
-    public void setRoomies(List<RoomieBean> roomies) {
+    public void setRoomies(ArrayList<RoomieBean> roomies) {
         this.roomies = roomies;
     }
 
     public void addRoomie(RoomieBean roomie) {
         roomies.add(roomie);
+    }
+
+    public int getCount(){
+        return roomies.size();
     }
 }
