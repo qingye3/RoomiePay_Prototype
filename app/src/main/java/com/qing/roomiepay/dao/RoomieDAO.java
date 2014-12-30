@@ -30,4 +30,12 @@ public class RoomieDAO {
     public RoomieBean getRoomieByIndex(int index){
         return datastore.roomies.get(index);
     }
+
+    public ArrayList<String> getAllNames(){
+        ArrayList<String> ret = new ArrayList<>();
+        for (RoomieBean roomie:datastore.roomies){
+            ret.add(roomie.getName());
+        }
+        return ret;
+    }
 }

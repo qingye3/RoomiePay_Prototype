@@ -13,7 +13,8 @@
     <string name="minus">-</string>
     <string name="add_shared_expenditure">Add shared expenditure</string>
     <string name="add_iou">Add IOU</string>
-    <string name="purpose">purpose</string>
-    <string name="amount">amount</string>
+    <string name="purpose">Purpose</string>
+    <string name="amount">Amount</string>
+    <string name="borrower">Borrower</string>
 
 </resources>

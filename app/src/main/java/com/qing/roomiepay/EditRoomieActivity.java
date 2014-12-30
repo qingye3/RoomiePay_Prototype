@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.qing.roomiepay.adapter.RoomieBookAdapter;
 import com.qing.roomiepay.bean.AmountBean;
 import com.qing.roomiepay.bean.ExpenditureBean;
+import com.qing.roomiepay.bean.IOUBean;
 import com.qing.roomiepay.bean.RoomieBean;
 import com.qing.roomiepay.dao.RoomieDAO;
 
@@ -17,6 +18,7 @@ import com.qing.roomiepay.dao.RoomieDAO;
  */
 public class EditRoomieActivity extends FragmentActivity
                                   implements AddExpenditureDialogFragment.AddExpenditureDialogListener,
+                                               AddIOUDialogFragment.AddIOUDialogListener,
                                                RoomieBookAdapter.RoomieBookAdapterListener{
     RoomieBean roomie;
     RoomieBookAdapter adapter;
@@ -52,6 +54,8 @@ public class EditRoomieActivity extends FragmentActivity
     }
 
     public void addIOUCB(View view){
+        AddIOUDialogFragment newFragment = new AddIOUDialogFragment();
+        newFragment.show(getSupportFragmentManager(), "add_IOU");
 
     }
 
@@ -71,5 +75,19 @@ public class EditRoomieActivity extends FragmentActivity
     @Override
     public void onRemovingAmount(AmountBean amount) {
         roomie.getExpenditures().remove(amount);
+    }
+
+    @Override
+    public void onIOUDialogPositiveClick(AddIOUDialogFragment dialog) {
+        IOUBean iou = dialog.getIOU();
+        if (iou != null) {
+            roomie.addIOU(dialog.getIOU());
+        }
+        updateListView();
+    }
+
+    @Override
+    public void onIOUDialogNegativeClick(AddIOUDialogFragment dialog) {
+
     }
 }
