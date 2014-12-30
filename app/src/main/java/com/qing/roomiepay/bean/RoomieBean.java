@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Qing on 12/23/2014.
  */
-public class RoomieBean {
+public class RoomieBean{
     private String name;
     List<IOUBean> IOUs = null;
     List<ExpenditureBean> expenditures = null;
