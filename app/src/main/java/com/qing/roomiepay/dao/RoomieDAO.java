@@ -26,4 +26,8 @@ public class RoomieDAO {
     public void removeRoomie(int index){
         datastore.roomies.remove(index);
     }
+
+    public RoomieBean getRoomieByIndex(int index){
+        return datastore.roomies.get(index);
+    }
 }

@@ -27,7 +27,7 @@ public class AddRoomieDialogFragment extends DialogFragment {
         builder.setView(v)
                 .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        TextView textView = (TextView) v.findViewById(R.id.roomie_name);
+                        TextView textView = (TextView) v.findViewById(R.id.textView);
                         roomieDAO.addRoomie(textView.getText().toString());
                         mListener.onDialogPositiveClick(AddRoomieDialogFragment.this);
                     }
@@ -53,7 +53,7 @@ public class AddRoomieDialogFragment extends DialogFragment {
             mListener = (AddRoomieDialogListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
-                    + " must implement NoticeDialogListener");
+                    + " must implement AddRoomieDialogListener");
         }
     }
 }
