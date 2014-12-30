@@ -1,5 +1,6 @@
 package com.qing.roomiepay;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
@@ -30,6 +31,8 @@ public class MainActivity extends FragmentActivity
     }
 
     public void startAccountingCB(View view){
+        Intent intent = new Intent(this, AccountingActivity.class);
+        this.startActivity(intent);
     }
 
     public void addRoomieCB(View view){
