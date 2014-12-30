@@ -74,7 +74,12 @@ public class EditRoomieActivity extends FragmentActivity
 
     @Override
     public void onRemovingAmount(AmountBean amount) {
-        roomie.getExpenditures().remove(amount);
+        if (amount instanceof ExpenditureBean){
+            roomie.getExpenditures().remove(amount);
+        }
+        else{
+            roomie.getIOUs().remove(amount);
+        }
     }
 
     @Override
