@@ -5,8 +5,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.qing.roomiepay.adapter.RoomieBookAdapter;
-import com.qing.roomiepay.bean.AmountBean;
+
 import com.qing.roomiepay.bean.ExpenditureBean;
 import com.qing.roomiepay.bean.IOUBean;
 import com.qing.roomiepay.bean.RoomieBean;

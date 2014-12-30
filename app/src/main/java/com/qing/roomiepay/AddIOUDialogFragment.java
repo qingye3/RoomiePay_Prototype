@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.qing.roomiepay.bean.ExpenditureBean;
 import com.qing.roomiepay.bean.IOUBean;
 import com.qing.roomiepay.dao.RoomieDAO;
 

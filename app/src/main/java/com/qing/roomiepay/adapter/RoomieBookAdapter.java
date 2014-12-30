@@ -1,8 +1,7 @@
 package com.qing.roomiepay.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.qing.roomiepay.EditRoomieActivity;
 import com.qing.roomiepay.R;
 import com.qing.roomiepay.bean.AmountBean;
 import com.qing.roomiepay.bean.RoomieBean;
