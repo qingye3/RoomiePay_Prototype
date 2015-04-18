@@ -12,6 +12,8 @@ import com.qing.roomiepay.bean.ExpenditureBean;
 import com.qing.roomiepay.bean.IOUBean;
 import com.qing.roomiepay.bean.RoomieBean;
 import com.qing.roomiepay.dao.RoomieDAO;
+import com.qing.roomiepay.fragment.AddExpenditureDialogFragment;
+import com.qing.roomiepay.fragment.AddIOUDialogFragment;
 
 /**
  * Created by Qing on 12/23/2014.
@@ -20,9 +22,9 @@ public class EditRoomieActivity extends FragmentActivity
                                   implements AddExpenditureDialogFragment.AddExpenditureDialogListener,
                                                AddIOUDialogFragment.AddIOUDialogListener,
                                                RoomieBookAdapter.RoomieBookAdapterListener{
-    RoomieBean roomie;
-    RoomieBookAdapter adapter;
-    ListView list = null;
+    private RoomieBean roomie;
+    private RoomieBookAdapter adapter;
+    private ListView list = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -77,7 +79,7 @@ public class EditRoomieActivity extends FragmentActivity
         if (amount instanceof ExpenditureBean){
             roomie.getExpenditures().remove(amount);
         }
-        else{
+        else if (amount instanceof IOUBean){
             roomie.getIOUs().remove(amount);
         }
     }

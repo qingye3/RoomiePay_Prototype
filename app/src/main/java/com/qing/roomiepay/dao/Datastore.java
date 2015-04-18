@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Datastore {
     private static Datastore instance = null;
-    public ArrayList<RoomieBean> roomies;
+    public final ArrayList<RoomieBean> roomies;
 
     private Datastore(){
         roomies = new ArrayList<>();

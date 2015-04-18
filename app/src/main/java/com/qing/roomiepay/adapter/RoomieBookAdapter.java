@@ -19,8 +19,8 @@ import java.util.ArrayList;
  * Created by Qing on 12/30/2014.
  */
 public class RoomieBookAdapter extends ArrayAdapter<AmountBean>{
-    Context context;
-    RoomieBean roomie;
+    private final Context context;
+    private final RoomieBean roomie;
 
     public RoomieBookAdapter(Context context, RoomieBean roomie){
         super(context, 0, new ArrayList<AmountBean>());
@@ -32,7 +32,7 @@ public class RoomieBookAdapter extends ArrayAdapter<AmountBean>{
         public void onRemovingAmount(AmountBean amount);
     }
 
-    RoomieBookAdapterListener mListener;
+    private RoomieBookAdapterListener mListener;
     public void setListener(RoomieBookAdapterListener listener){
         mListener = listener;
     }

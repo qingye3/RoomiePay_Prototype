@@ -5,11 +5,12 @@ import java.util.List;
 
 /**
  * Created by Qing on 12/23/2014.
+ * Bean to store data. Only getters are allowed
  */
 public class RoomieBean{
     private String name;
-    List<IOUBean> IOUs = null;
-    List<ExpenditureBean> expenditures = null;
+    private List<IOUBean> IOUs = null;
+    private List<ExpenditureBean> expenditures = null;
 
     public RoomieBean(String name) {
         this.name = name;
@@ -25,21 +26,17 @@ public class RoomieBean{
 
     public List<IOUBean> getIOUs() {
         if (IOUs == null){
-            IOUs = new ArrayList<IOUBean>();
+            IOUs = new ArrayList<>();
         }
         return IOUs;
     }
 
     public void addIOU(IOUBean IOU){
         if (IOUs == null){
-            IOUs = new ArrayList<IOUBean>();
+            IOUs = new ArrayList<>();
         }
         this.IOUs.add(IOU);
 
-    }
-
-    public void removeIOUbyIndex(int index){
-        IOUs.remove(index);
     }
 
     public List<ExpenditureBean> getExpenditures(){
@@ -51,13 +48,8 @@ public class RoomieBean{
 
     public void addExpenditure(ExpenditureBean expenditure){
         if (expenditures == null){
-            expenditures = new ArrayList<ExpenditureBean>();
+            expenditures = new ArrayList<>();
         }
         this.expenditures.add(expenditure);
     }
-
-    public void removeExpenditureByID(int index){
-        expenditures.remove(index);
-    }
-
 }

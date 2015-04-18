@@ -21,8 +21,8 @@ import java.util.ArrayList;
  * Created by Qing on 12/23/2014.
  */
 public class RoomieAdapter extends ArrayAdapter<RoomieBean>{
-    RoomieDAO roomieDAO;
-    Context context;
+    private final RoomieDAO roomieDAO;
+    private final Context context;
 
     public RoomieAdapter(Context context, ArrayList<RoomieBean> roomies) {
         super(context,0, roomies);

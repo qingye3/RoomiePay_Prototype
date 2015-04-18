@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RoomiePay.iml" filepath="$PROJECT_DIR$/RoomiePay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RoomiePay_Prototype.iml" filepath="$PROJECT_DIR$/RoomiePay_Prototype.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
-

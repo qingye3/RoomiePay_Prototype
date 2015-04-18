@@ -10,15 +10,16 @@ import android.widget.ListView;
 import com.qing.roomiepay.adapter.RoomieAdapter;
 import com.qing.roomiepay.bean.RoomieBean;
 import com.qing.roomiepay.dao.RoomieDAO;
+import com.qing.roomiepay.fragment.AddRoomieDialogFragment;
 
 import java.util.ArrayList;
 
 public class MainActivity extends FragmentActivity
                             implements AddRoomieDialogFragment.AddRoomieDialogListener{
 
-    ListView list = null;
-    RoomieDAO roomieDAO = null;
-    RoomieAdapter adapter;
+    private ListView list = null;
+    private RoomieDAO roomieDAO = null;
+    private RoomieAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,18 @@ public class MainActivity extends FragmentActivity
         list = (ListView) findViewById(R.id.roomieListView);
         adapter = new RoomieAdapter(this, new ArrayList<RoomieBean>());
         list.setAdapter(adapter);
+        updateListView();
+    }
+
+    private void updateListView() {
+        adapter.clear();
+        adapter.addAll(roomieDAO.getAllRoomies());
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        updateListView();
     }
 
     public void startAccountingCB(View view){
@@ -42,8 +55,7 @@ public class MainActivity extends FragmentActivity
 
     @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
-        adapter.clear();
-        adapter.addAll(roomieDAO.getAllRoomies());
+        updateListView();
     }
 
     @Override

@@ -15,9 +15,9 @@ import java.util.ArrayList;
 
 public class AccountingActivity extends Activity {
 
-    RoomieDAO roomieDAO = null;
-    ListView list = null;
-    ArrayAdapter<String> adapter = null;
+    private RoomieDAO roomieDAO = null;
+    private ListView list = null;
+    private ArrayAdapter<String> adapter = null;
 
 
     @Override
@@ -27,7 +27,7 @@ public class AccountingActivity extends Activity {
         roomieDAO = new RoomieDAO();
 
         list = (ListView) findViewById(R.id.listView);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, new ArrayList<String>());
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, new ArrayList<String>());
         list.setAdapter(adapter);
 
         updateListView();
@@ -69,9 +69,11 @@ public class AccountingActivity extends Activity {
         for (int i = 0; i < getCount(); i++){
             for (int j = i+1; j < getCount(); j++){
                 transMatrix[i][j] += getIOUSums(getRoomieByIndex(i), getRoomieByIndex(j));
+                transMatrix[i][j] -= getIOUSums(getRoomieByIndex(j), getRoomieByIndex(i));
                 transMatrix[i][j] += (getExpenditure(getRoomieByIndex(j)) - getExpenditure(getRoomieByIndex(i)))/getCount();
             }
         }
+
         for (int i = 0; i < getCount(); i++){
             for (int j = i+2; j < getCount(); j++){
                 double adjustAmount = transMatrix[i][j];
@@ -86,7 +88,7 @@ public class AccountingActivity extends Activity {
     private double getIOUSums(RoomieBean borrower, RoomieBean lender) {
         double ret = 0;
         for (IOUBean iou : lender.getIOUs()){
-            if (iou.getBorrower() == borrower.getName()){
+            if (iou.getBorrower().equals(borrower.getName())){
                 ret+= iou.getAmount();
             }
         }
